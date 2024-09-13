@@ -2,6 +2,8 @@ package com.search.servlet;
 
 import java.io.IOException;
 
+import org.springframework.beans.factory.annotation.Autowired;
+
 import com.search.service.SearchAsyncService;
 import com.search.service.SearchService;
 
@@ -11,13 +13,12 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 
 
-class SearchAsyncServlet extends HttpServlet {
+@SuppressWarnings("serial")
+public class SearchAsyncServlet extends HttpServlet {
 
-    private final SearchAsyncService searchAsyncService;
+	@Autowired
+    private SearchAsyncService searchAsyncService;
 
-    public SearchAsyncServlet(SearchAsyncService searchAsyncService) {
-        this.searchAsyncService = searchAsyncService;
-    }
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {

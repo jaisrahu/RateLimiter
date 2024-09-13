@@ -15,6 +15,7 @@ import com.search.service.SearchService;
 
 @Configuration
 public class AppConfig {
+	
     
     @Bean
     public RateLimiter rateLimiter() {
@@ -23,7 +24,7 @@ public class AppConfig {
     
     @Bean
     public SearchService searchService() {
-        return new SearchService(rateLimiter());
+        return new SearchService();
     }
     
     @Bean

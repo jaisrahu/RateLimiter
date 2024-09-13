@@ -2,6 +2,8 @@ package com.search.servlet;
 
 import java.io.IOException;
 
+import org.springframework.beans.factory.annotation.Autowired;
+
 import com.search.service.SearchService;
 
 import jakarta.servlet.ServletException;
@@ -10,13 +12,12 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 
 
-class SearchServlet extends HttpServlet {
+@SuppressWarnings("serial")
+public class SearchServlet extends HttpServlet {
 
-    private final SearchService searchService;
+	@Autowired
+    private SearchService searchService;
 
-    public SearchServlet(SearchService searchService) {
-        this.searchService = searchService;
-    }
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {

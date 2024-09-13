@@ -25,7 +25,7 @@ public class SearchAsyncService {
 	        	// push message into queue 
 	        	List<String> messageList = new ArrayList<String>(); // get it from query 
 	        	for(String msg : messageList) {
-		        	producer.receiveRequest(query);
+		        	producer.receiveRequest(msg);
 
 	        	}
 	            return "Wait for result to be ready " + query;
